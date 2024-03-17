@@ -3,22 +3,24 @@ import './App.css';
 import Kontak from './pages/Kontak';
 import Nav from './pages/Nav';
 import Sejarah from './pages/Sejarah';
-import Tentang from './pages/Tentang';
-import Home from './pages/Home';
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Tentang from './pages/Tentang'; 
+import Home from './pages/Home'; 
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+
 
 function App() {
   return (
-    <BrowserRouter> 
-    <div className="App">
-      <Nav />
-      <Switch>
-        <Route path = '/' component= {Home} exact/>
-        <Route path = '/kontak' component= {Kontak} />
-        <Route path = '/sejarah' component= {Sejarah} />
-        <Route path = '/tentang' component= {Tentang} />
-        </Switch>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Nav />
+        <Routes>
+          <Route path='/' element={<Home/>} exact />
+          <Route path='/sejarah' element={<Sejarah/>}/>
+          <Route path='/kontak' element={<Kontak/>}/>
+          <Route path='/tentang' element={<Tentang/>}/>
+        </Routes>
+      </div>
     </BrowserRouter>
   );
 }
